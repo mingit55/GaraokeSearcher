@@ -1,0 +1,44 @@
+﻿<Window x:Class="GaraokeSearcher.Windows.SearchDetailWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GaraokeSearcher.Windows"
+        mc:Ignorable="d"
+        FontFamily="Noto Sans KR"
+        Title="노래방 번호 검색" Height="600" Width="380" Closed="Window_Closed">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Label
+            x:Name="titleControl"
+            Grid.Row="0"
+            Content="상세검색 결과"
+            VerticalAlignment="Center"
+            VerticalContentAlignment="Center"
+            Margin="10,0,0,0"
+            FontSize="16"
+        />
+        <Rectangle
+            Grid.Row="0"
+            Height="1"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Bottom"
+            Width="Auto"
+            Fill="#fafafa" 
+        />
+        <ListView x:Name="listViewControl" Grid.Row="1" Foreground="#FF595959">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="번호" Width="70" DisplayMemberBinding="{ Binding room_id }" />
+                    <GridViewColumn Header="제목" Width="Auto" DisplayMemberBinding="{ Binding title }"  />
+                    <GridViewColumn Header="아티스트" Width="70" DisplayMemberBinding="{ Binding artist }" />
+                    <GridViewColumn Header="작곡가" Width="70" DisplayMemberBinding="{ Binding composer }" />
+                    <GridViewColumn Header="작사가" Width="70" DisplayMemberBinding="{ Binding lyricist }"  />
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Window>
